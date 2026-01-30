@@ -1,4 +1,4 @@
-<mvc:View controllerName="feemanagmentadmin.controller.View1"
+<mvc:View controllerName="feemanagmentadmin.controller.AdminView1"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
     xmlns:core="sap.ui.core"

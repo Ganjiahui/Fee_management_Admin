@@ -90,19 +90,19 @@
       ],
       "targets": {
         "TargetView1": {
-          "id": "View1",
-          "name": "View1"
+          "id": "AdminView1",
+          "name": "AdminView1"
         },
         "TargetPaymentReport": {
-          "id": "PaymentReport",
-          "name": "PaymentReport"
+          "id": "AdminPaymentReport",
+          "name": "AdminPaymentReport"
         }
       }
     },
     "rootView": {
-      "viewName": "feemanagmentadmin.view.App",
+      "viewName": "feemanagmentadmin.view.AdminApp",
       "type": "XML",
-      "id": "App",
+      "id": "AdminApp",
       "async": true
     }
   }

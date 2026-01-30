@@ -7,7 +7,7 @@ sap.ui.define([
 ], function (Controller, Filter, FilterOperator, JSONModel, MessageBox) {
     "use strict";
 
-    return Controller.extend("feemanagmentadmin.controller.PaymentReport", {
+    return Controller.extend("feemanagmentadmin.controller.AdminPaymentReport", {
         onInit: function () {
             const oData = {
                 students: [

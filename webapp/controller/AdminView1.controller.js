@@ -4,7 +4,7 @@ sap.ui.define([
 ], (Controller, JSONModel) => {
     "use strict";
 
-    return Controller.extend("feemanagmentadmin.controller.View1", {
+    return Controller.extend("feemanagmentadmin.controller.AdminView1", {
         onInit() {
             // Create mock data for the dashboard
             const oData = {
