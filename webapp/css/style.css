@@ -1,1 +1,759 @@
-/* Enter your custom styles here */
+/* Dashboard Styles */
+.adminDashboard {
+    background-color: #F5F7FA !important;
+}
+
+.sectionTitle {
+    margin: 1rem 0 0.5rem 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2C3E50;
+}
+
+/* Statistics Cards */
+.statsRow {
+    margin: 0.5rem 0;
+    gap: 1rem;
+}
+
+.statCard {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    min-width: 240px;
+    flex: 1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin: 0.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.statCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.statNumber {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2C3E50;
+    margin: 0.5rem 0 0.2rem 0;
+}
+
+.statLabel {
+    font-size: 0.95rem;
+    color: #7F8C8D;
+    font-weight: 500;
+}
+
+.statSubLabel {
+    font-size: 0.8rem;
+    color: #95A5A6;
+    margin-top: 0.2rem;
+}
+
+.trendPositive {
+    background: #D5F4E6;
+    color: #27AE60;
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.trendNegative {
+    background: #FADBD8;
+    color: #E74C3C;
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.trendNeutral {
+    background: #E8F8F5;
+    color: #16A085;
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.todayBadge {
+    background: #5A9FD4;
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Main Content Layout */
+.mainContentRow {
+    margin-top: 1.5rem;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.leftColumn {
+    flex: 2;
+    min-width: 400px;
+    gap: 1rem;
+}
+
+.middleColumn {
+    flex: 1.5;
+    min-width: 350px;
+    gap: 1rem;
+}
+
+.rightColumn {
+    flex: 1;
+    min-width: 300px;
+    gap: 1rem;
+}
+
+/* Content Cards */
+.contentCard {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin-bottom: 1rem;
+}
+
+.cardHeader {
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+.cardTitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2C3E50;
+}
+
+.viewAllLink {
+    color: #3498DB;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.viewButton,
+.viewButton .sapMBtnInner,
+.viewButton .sapMBtnContent {
+    color: white !important;
+    background-color: #2C5282 !important;
+    border: none !important;
+    border-radius: 10px;
+    font-weight: 500;
+    padding: 0.5px 8px;
+}
+
+/* Applications List */
+.applicationsList .sapMListItem {
+    border-bottom: 1px solid #ECF0F1;
+}
+
+.applicationItem {
+    padding: 1rem 0 !important;
+}
+
+.applicationName {
+    font-weight: 600;
+    color: #2C3E50;
+    margin-right: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.applicationDetails {
+    font-size: 0.85rem;
+    color: #7F8C8D;
+    margin-top: 0.3rem;
+}
+
+.statusBadge {
+    margin-left: 0.5rem;
+    font-size: 0.8rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+}
+
+/* Payment Report Page Styles */
+.paymentReportPage {
+    background-color: #F5F7FA !important;
+}
+
+.paymentReportPage .sapMPageHeader {
+    background-color: white !important;
+    border-bottom: 1px solid #E0E0E0 !important;
+}
+
+.pageHeaderToolbar {
+    background-color: white !important;
+    padding: 0.5rem 1rem !important;
+}
+
+.pageTitle {
+    font-size: 1.5rem !important;
+    font-weight: 600 !important;
+    color: #2C3E50 !important;
+}
+
+.pageSubHeaderToolbar {
+    background-color: white !important;
+    border-bottom: 1px solid #E0E0E0 !important;
+}
+
+.pageSubtitle {
+    font-size: 0.9rem !important;
+    color: #7F8C8D !important;
+    font-weight: 400 !important;
+}
+
+.tabNavigation {
+    margin-bottom: 1.5rem;
+    gap: 0.5rem;
+}
+
+.activeTab {
+    background-color: #3498DB !important;
+    border-color: #3498DB !important;
+    color: white !important;
+}
+
+.activeTab .sapMBtnInner {
+    background-color: #3498DB !important;
+    border-color: #3498DB !important;
+    color: white !important;
+}
+
+.statsRowPayment {
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.statCardPayment {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    flex: 1;
+    min-width: 200px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid #BDC3C7;
+}
+
+.statLabelPayment {
+    font-size: 0.9rem;
+    color: #7F8C8D;
+    margin-bottom: 0.5rem;
+}
+
+.statNumberPayment {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2C3E50;
+}
+
+.statNumberGreenPayment {
+    color: #27AE60 !important;
+}
+
+.statNumberRedPayment {
+    color: #E74C3C !important;
+}
+
+.statNumberBluePayment {
+    color: #3498DB !important;
+}
+
+.paidCardPayment {
+    border-left: 4px solid #27AE60;
+}
+
+.unpaidCardPayment {
+    border-left: 4px solid #E74C3C;
+}
+
+.outstandingCardPayment {
+    border-left: 4px solid #3498DB;
+}
+
+.filterSection {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.filterSegmented .sapMSegBBtn {
+    min-width: 120px;
+}
+
+/* All Students - Blue when selected */
+.filterSegmented .allStudentsBtn.sapMSegBBtnSel,
+.filterSegmented .allStudentsBtn.sapMSegBBtnSel:hover,
+.filterSegmented .allStudentsBtn.sapMSegBBtnSel:focus {
+    background-color: #3498DB !important;
+    color: white !important;
+    border-color: #3498DB !important;
+}
+
+.filterSegmented .allStudentsBtn.sapMSegBBtnSel .sapMBtnInner,
+.filterSegmented .allStudentsBtn.sapMSegBBtnSel:hover .sapMBtnInner,
+.filterSegmented .allStudentsBtn.sapMSegBBtnSel .sapMBtnContent {
+    background-color: #3498DB !important;
+    border-color: #3498DB !important;
+    color: white !important;
+}
+
+/* Paid Only - Green when selected */
+.filterSegmented .paidOnlyBtn.sapMSegBBtnSel,
+.filterSegmented .paidOnlyBtn.sapMSegBBtnSel:hover,
+.filterSegmented .paidOnlyBtn.sapMSegBBtnSel:focus {
+    background-color: #27AE60 !important;
+    color: white !important;
+    border-color: #27AE60 !important;
+}
+
+.filterSegmented .paidOnlyBtn.sapMSegBBtnSel .sapMBtnInner,
+.filterSegmented .paidOnlyBtn.sapMSegBBtnSel:hover .sapMBtnInner,
+.filterSegmented .paidOnlyBtn.sapMSegBBtnSel .sapMBtnContent {
+    background-color: #27AE60 !important;
+    border-color: #27AE60 !important;
+    color: white !important;
+}
+
+/* Unpaid Only - Red when selected */
+.filterSegmented .unpaidOnlyBtn.sapMSegBBtnSel,
+.filterSegmented .unpaidOnlyBtn.sapMSegBBtnSel:hover,
+.filterSegmented .unpaidOnlyBtn.sapMSegBBtnSel:focus {
+    background-color: #E74C3C !important;
+    color: white !important;
+    border-color: #E74C3C !important;
+}
+
+.filterSegmented .unpaidOnlyBtn.sapMSegBBtnSel .sapMBtnInner,
+.filterSegmented .unpaidOnlyBtn.sapMSegBBtnSel:hover .sapMBtnInner,
+.filterSegmented .unpaidOnlyBtn.sapMSegBBtnSel .sapMBtnContent {
+    background-color: #E74C3C !important;
+    border-color: #E74C3C !important;
+    color: white !important;
+}
+
+.searchFieldPayment {
+    max-width: 400px;
+}
+
+/* Payment Table Styles */
+.paymentTable {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin-bottom: 1.5rem;
+}
+
+.paymentTable .sapMListTbl {
+    border: none !important;
+}
+
+.paymentTable thead {
+    background-color: #34495E !important;
+}
+
+.paymentTable .sapMListTblHeaderCell {
+    background-color: #34495E !important;
+    border-bottom: none !important;
+    padding: 1rem !important;
+}
+
+.tableHeader {
+    color: white !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+}
+
+.tableRow {
+    border-bottom: 1px solid #ECF0F1 !important;
+}
+
+.tableRow:hover {
+    background-color: #F8F9FA !important;
+}
+
+.tableRow .sapMListTblCell {
+    padding: 1rem !important;
+}
+
+.tableCellText {
+    font-size: 0.9rem;
+    color: #2C3E50;
+}
+
+.tableCellBold {
+    font-weight: 600;
+}
+
+.tableCellSmall {
+    font-size: 0.75rem;
+    color: #7F8C8D;
+}
+
+.tableCellRight {
+    text-align: right;
+}
+
+.tableCellGreen {
+    color: #27AE60 !important;
+    font-weight: 600;
+}
+
+.tableCellRed {
+    color: #E74C3C !important;
+    font-weight: 600;
+}
+
+.statusBadgeTable {
+    font-size: 0.75rem;
+}
+
+.statusBadgeTable .sapMObjStatusText {
+    font-weight: 600;
+}
+
+.actionButton {
+    color: #3498DB !important;
+}
+
+.actionButton:hover {
+    background-color: #EBF5FB !important;
+}
+
+/* Reminder Section */
+.reminderSection {
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin-bottom: 2rem;
+}
+
+.reminderTitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2C3E50;
+    margin-bottom: 0.5rem;
+}
+
+.reminderText {
+    font-size: 0.9rem;
+    color: #7F8C8D;
+}
+
+.reminderButton {
+    background-color: #E74C3C !important;
+    border-color: #E74C3C !important;
+    min-width: 250px;
+    border-radius: 10px;
+}
+
+.reminderButton .sapMBtnInner {
+    background-color: #E74C3C !important;
+    border-color: #E74C3C !important;
+    color: white !important;
+}
+
+.reminderButton:hover .sapMBtnInner {
+    background-color: #C0392B !important;
+}
+
+/* Footer */
+.pageFooter {
+    margin: 2rem 0 1rem 0;
+    padding: 1rem;
+}
+
+.footerText {
+    font-size: 0.85rem;
+    color: #95A5A6;
+}
+
+.cardFooter {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ECF0F1;
+}
+
+.manageButton {
+    width: 100%;
+    max-width: 300px;
+}
+
+/* Maintenance List */
+.maintenanceList .sapMListItem {
+    border-bottom: 1px solid #ECF0F1;
+}
+
+.maintenanceItem {
+    padding: 1rem 0 !important;
+}
+
+.maintenanceInfo {
+    margin-left: 0.5rem;
+}
+
+.maintenanceTitle {
+    font-weight: 600;
+    color: #2C3E50;
+    font-size: 0.95rem;
+}
+
+.maintenanceLocation {
+    font-size: 0.85rem;
+    color: #7F8C8D;
+    margin-top: 0.2rem;
+}
+
+.maintenanceReporter {
+    font-size: 0.8rem;
+    color: #95A5A6;
+    margin-top: 0.5rem;
+}
+
+.priorityBadge {
+    font-size: 0.8rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+}
+
+/* Room Allocation */
+.allocationList {
+    gap: 1.5rem;
+}
+
+.allocationItem {
+    margin-bottom: 1.5rem;
+}
+
+.allocationHeader {
+    margin-bottom: 0.5rem;
+}
+
+.blockName {
+    font-weight: 600;
+    color: #2C3E50;
+    margin-left: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.allocationStats {
+    font-size: 0.85rem;
+    color: #7F8C8D;
+}
+
+.allocationSummary {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #ECF0F1;
+}
+
+.summaryItem {
+    flex: 1;
+}
+
+.summaryLabel {
+    font-size: 0.85rem;
+    color: #7F8C8D;
+    margin-bottom: 0.3rem;
+}
+
+.summaryValue {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2C3E50;
+}
+
+/* Check Activities */
+.checkActivitiesList .sapMListItem {
+    border-bottom: 1px solid #ECF0F1;
+}
+
+.checkActivityItem {
+    padding: 1rem 0 !important;
+}
+
+.activityInfo {
+    margin-left: 0.5rem;
+}
+
+.activityName {
+    font-weight: 600;
+    color: #2C3E50;
+    font-size: 0.9rem;
+}
+
+.activityRoom {
+    font-size: 0.8rem;
+    color: #7F8C8D;
+    margin-top: 0.2rem;
+}
+
+.activityDate {
+    font-size: 0.8rem;
+    color: #95A5A6;
+    text-align: right;
+}
+
+.activityStatus {
+    margin-top: 0.2rem;
+    font-size: 0.75rem;
+}
+
+.activitySummary {
+    margin-top: 1.5rem;
+    gap: 1rem;
+}
+
+.summaryBox {
+    flex: 1;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.summaryGreen {
+    background: #D5F4E6;
+}
+
+.summaryOrange {
+    background: #FCE4D6;
+}
+
+.summaryBoxLabel {
+    font-size: 0.85rem;
+    color: #2C3E50;
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+}
+
+.summaryBoxValue {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #2C3E50;
+}
+
+/* Payments List */
+.paymentsList .sapMListItem {
+    border-bottom: 1px solid #ECF0F1;
+}
+
+.paymentItem {
+    padding: 1rem 0 !important;
+}
+
+.paymentName {
+    font-weight: 600;
+    color: #2C3E50;
+    font-size: 0.9rem;
+}
+
+.paymentType {
+    font-size: 0.85rem;
+    color: #7F8C8D;
+    margin-top: 0.2rem;
+}
+
+.paymentTime {
+    font-size: 0.8rem;
+    color: #95A5A6;
+    margin-right: 0.5rem;
+}
+
+.paymentStatus {
+    font-size: 0.75rem;
+    margin-top: 6px;
+}
+
+/* Outstanding Alerts */
+.alertCard {
+    background: white;
+}
+
+.alertsList {
+    gap: 1rem;
+}
+
+.alertItem {
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.alertDanger {
+    background: linear-gradient(135deg, #E74C3C 0%, #C0392B 100%);
+}
+
+.alertWarning {
+    background: linear-gradient(135deg, #F39C12 0%, #E67E22 100%);
+}
+
+.alertInfo {
+    background: linear-gradient(135deg, #3498DB 0%, #2980B9 100%);
+}
+
+.alertIcon {
+    margin-right: 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem;
+    border-radius: 50%;
+}
+
+.alertText {
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Today's Summary */
+.todayStats {
+    gap: 1rem;
+}
+
+.todayStatItem {
+    padding: 1rem 0;
+    border-bottom: 1px solid #ECF0F1;
+}
+
+.todayStatItem:last-child {
+    border-bottom: none;
+}
+
+.todayStatLabel {
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+    color: #7F8C8D;
+    font-weight: 500;
+}
+
+.todayStatValue {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2C3E50;
+}
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+    .leftColumn, .middleColumn, .rightColumn {
+        min-width: 100%;
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .statCard {
+        min-width: 100%;
+    }
+    
+    .statsRow {
+        flex-direction: column;
+    }
+}

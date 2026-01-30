@@ -1,6 +1,350 @@
 <mvc:View controllerName="feemanagmentadmin.controller.View1"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:layout="sap.ui.layout"
+    xmlns:f="sap.f"
+    xmlns:card="sap.f.cards">
+    <Page id="page" title="Hostel Management System" showNavButton="false" class="adminDashboard">
+        <content>
+            <ScrollContainer height="100%" width="100%" vertical="true" horizontal="false">
+                <VBox class="sapUiSmallMargin">
+                    
+                    <!-- Quick Statistics Header -->
+                    <Title text="Quick Statistics" level="H2" class="sectionTitle"/>
+                    
+                    <!-- First Row of Statistics -->
+                    <HBox class="statsRow" wrap="Wrap">
+                        <VBox class="statCard pendingCard">
+                            <HBox justifyContent="SpaceBetween" alignItems="Start" width="100%">
+                                <core:Icon src="sap-icon://document" size="2rem" color="#5A9FD4"/>
+                                <Text text="+18%" class="trendPositive"/>
+                            </HBox>
+                            <Text text="245" class="statNumber"/>
+                            <Text text="Pending Applications" class="statLabel"/>
+                            <Text text="6 Not viewed" class="statSubLabel"/>
+                        </VBox>
+                        
+                        <VBox class="statCard requestCard">
+                            <HBox justifyContent="SpaceBetween" alignItems="Start" width="100%">
+                                <core:Icon src="sap-icon://wrench" size="2rem" color="#95D4A4"/>
+                                <Text text="+25%" class="trendPositive"/>
+                            </HBox>
+                            <Text text="67" class="statNumber"/>
+                            <Text text="Maintenance Requests" class="statLabel"/>
+                            <Text text="In last month" class="statSubLabel"/>
+                        </VBox>
+                        
+                        <VBox class="statCard occupantCard">
+                            <HBox justifyContent="SpaceBetween" alignItems="Start" width="100%">
+                                <core:Icon src="sap-icon://home" size="2rem" color="#7BC67E"/>
+                                <Text text="97%" class="trendNeutral"/>
+                            </HBox>
+                            <Text text="1,092" class="statNumber"/>
+                            <Text text="Occupants Rooms" class="statLabel"/>
+                            <Text text="From 1126 rooms" class="statSubLabel"/>
+                        </VBox>
+                        
+                        <VBox class="statCard checkinCard">
+                            <HBox justifyContent="SpaceBetween" alignItems="Start" width="100%">
+                                <core:Icon src="sap-icon://customer" size="2rem" color="#B298DC"/>
+                                <Text text="Today" class="todayBadge"/>
+                            </HBox>
+                            <Text text="34" class="statNumber"/>
+                            <Text text="Check In Today" class="statLabel"/>
+                            <Text text="6 Are not confirmed" class="statSubLabel"/>
+                        </VBox>
+                    </HBox>
+                    
+                    <!-- Second Row of Statistics -->
+                    <HBox class="statsRow" wrap="Wrap">
+                        <VBox class="statCard registeredCard">
+                            <HBox justifyContent="SpaceBetween" alignItems="Start" width="100%">
+                                <core:Icon src="sap-icon://group" size="2rem" color="#5DADE2"/>
+                                <Text text="+8%" class="trendPositive"/>
+                            </HBox>
+                            <Text text="1,248" class="statNumber"/>
+                            <Text text="Total Registered" class="statLabel"/>
+                            <Text text="Active students" class="statSubLabel"/>
+                        </VBox>
+                        
+                        <VBox class="statCard revenueCard">
+                            <HBox justifyContent="SpaceBetween" alignItems="Start" width="100%">
+                                <core:Icon src="sap-icon://money-bills" size="2rem" color="#82CA9D"/>
+                                <Text text="-10%" class="trendNegative"/>
+                            </HBox>
+                            <Text text="RM 970,296" class="statNumber"/>
+                            <Text text="Revenue Collected" class="statLabel"/>
+                            <Text text="For this semester" class="statSubLabel"/>
+                        </VBox>
+                        
+                        <VBox class="statCard pendingPaymentCard">
+                            <HBox justifyContent="SpaceBetween" alignItems="Start" width="100%">
+                                <core:Icon src="sap-icon://payment-approval" size="2rem" color="#F7DC6F"/>
+                                <Text text="-8%" class="trendNegative"/>
+                            </HBox>
+                            <Text text="156" class="statNumber"/>
+                            <Text text="Pending Payments" class="statLabel"/>
+                            <Text text="Need to processing" class="statSubLabel"/>
+                        </VBox>
+                        
+                        <VBox class="statCard completedPaymentCard">
+                            <HBox justifyContent="SpaceBetween" alignItems="Start" width="100%">
+                                <core:Icon src="sap-icon://complete" size="2rem" color="#85C1E2"/>
+                                <Text text="+18%" class="trendPositive"/>
+                            </HBox>
+                            <Text text="1,092" class="statNumber"/>
+                            <Text text="Completed Payments" class="statLabel"/>
+                            <Text text="This semester" class="statSubLabel"/>
+                        </VBox>
+                    </HBox>
+                    
+                    <!-- Main Content Area with 3 Columns -->
+                    <HBox class="mainContentRow" wrap="Wrap">
+                        
+                        <!-- Left Column -->
+                        <VBox class="leftColumn">
+                            <!-- Recent Applications -->
+                            <VBox class="contentCard">
+                                <HBox justifyContent="SpaceBetween" alignItems="Center" width="100%" class="cardHeader">
+                                    <Title text="Recent Applications" level="H3" class="cardTitle"/>
+                                    <Link text="View All →" class="viewAllLink"/>
+                                </HBox>
+                                
+                                <List items="{/recentApplications}" class="applicationsList">
+                                    <CustomListItem class="applicationItem">
+                                        <HBox justifyContent="SpaceBetween" alignItems="Center" width="100%">
+                                            <VBox class="applicationInfo">
+                                                <HBox alignItems="Center">
+                                                    <Text text="{name}" class="applicationName"/>
+                                                    <ObjectStatus text="{status}" state="{statusState}" class="statusBadge"/>
+                                                </HBox>
+                                                <Text text="{details}" class="applicationDetails"/>
+                                            </VBox>
+                                            <core:Icon src="sap-icon://navigation-right-arrow" color="#999" size="1rem"/>
+                                        </HBox>
+                                    </CustomListItem>
+                                </List>
+                                
+                                <HBox justifyContent="Center" class="cardFooter">
+                                    <Button text="Manage All applications" type="Emphasized" class="manageButton"/>
+                                </HBox>
+                            </VBox>
+                            
+                            <!-- Room Allocation Status -->
+                            <VBox class="contentCard">
+                                <Title text="Room Allocation Status" level="H3" class="cardTitle"/>
+                                
+                                <VBox class="allocationList">
+                                    <VBox items="{/roomAllocations}" class="allocationItem">
+                                        <HBox justifyContent="SpaceBetween" alignItems="Center" width="100%" class="allocationHeader">
+                                            <HBox alignItems="Center">
+                                                <core:Icon src="sap-icon://home" color="#5A9FD4" size="1.5rem"/>
+                                                <Text text="Block A (KTD)" class="blockName"/>
+                                            </HBox>
+                                            <Text text="Occupied: 98      Capacity: 100      Available:      2" class="allocationStats"/>
+                                        </HBox>
+                                        <ProgressIndicator percentValue="98" displayValue="98%" state="Success" width="100%"/>
+                                    </VBox>
+                                    
+                                    <VBox class="allocationItem">
+                                        <HBox justifyContent="SpaceBetween" alignItems="Center" width="100%" class="allocationHeader">
+                                            <HBox alignItems="Center">
+                                                <core:Icon src="sap-icon://home" color="#F39C12" size="1.5rem"/>
+                                                <Text text="Block C (KTF)" class="blockName"/>
+                                            </HBox>
+                                            <Text text="Occupied: 84      Capacity: 100      Available:    16" class="allocationStats"/>
+                                        </HBox>
+                                        <ProgressIndicator percentValue="84" displayValue="84%" state="Warning" width="100%"/>
+                                    </VBox>
+                                    
+                                    <VBox class="allocationItem">
+                                        <HBox justifyContent="SpaceBetween" alignItems="Center" width="100%" class="allocationHeader">
+                                            <HBox alignItems="Center">
+                                                <core:Icon src="sap-icon://home" color="#7BC67E" size="1.5rem"/>
+                                                <Text text="Block D (KTP)" class="blockName"/>
+                                            </HBox>
+                                            <Text text="Occupied: 91      Capacity: 100      Available:      9" class="allocationStats"/>
+                                        </HBox>
+                                        <ProgressIndicator percentValue="91" displayValue="91%" state="Success" width="100%"/>
+                                    </VBox>
+                                </VBox>
+                                
+                                <HBox justifyContent="SpaceBetween" class="allocationSummary">
+                                    <VBox alignItems="Center" class="summaryItem">
+                                        <Text text="Total Rooms" class="summaryLabel"/>
+                                        <Text text="1,248" class="summaryValue"/>
+                                    </VBox>
+                                    <VBox alignItems="Center" class="summaryItem">
+                                        <Text text="Occupied" class="summaryLabel"/>
+                                        <Text text="1,092" class="summaryValue"/>
+                                    </VBox>
+                                    <VBox alignItems="Center" class="summaryItem">
+                                        <Text text="Available" class="summaryLabel"/>
+                                        <Text text="156" class="summaryValue"/>
+                                    </VBox>
+                                </HBox>
+                            </VBox>
+                            
+                            <!-- Recent Payment Activities -->
+                            <VBox class="contentCard">
+                                <HBox justifyContent="SpaceBetween" alignItems="Center" width="100%" class="cardHeader">
+                                    <Title text="Recent Payment Activities" level="H3" class="cardTitle"/>
+                                    <Button text="View" class="viewButton" press="onViewPayments"/>
+                                </HBox>
+                                
+                                <List items="{/recentPayments}" class="paymentsList">
+                                    <CustomListItem class="paymentItem">
+                                        <HBox justifyContent="SpaceBetween" alignItems="Center" width="100%">
+                                            <VBox class="paymentInfo">
+                                                <Text text="{studentName}" class="paymentName"/>
+                                                <Text text="{paymentType}" class="paymentType"/>
+                                            </VBox>
+                                            <HBox alignItems="Center" class="sapUiTinyMarginBegin">
+                                                <Text text="{timeAgo}" class="paymentTime"/>
+                                                <ObjectStatus text="{status}" state="{statusState}" class="paymentStatus"/>
+                                            </HBox>
+                                        </HBox>
+                                    </CustomListItem>
+                                </List>
+                            </VBox>
+                        </VBox>
+                        
+                        <!-- Middle Column -->
+                        <VBox class="middleColumn">
+                            <!-- Maintenance Requests -->
+                            <VBox class="contentCard">
+                                <HBox justifyContent="SpaceBetween" alignItems="Center" width="100%" class="cardHeader">
+                                    <Title text="Maintenance Requests" level="H3" class="cardTitle"/>
+                                    <Link text="View All →" class="viewAllLink"/>
+                                </HBox>
+                                
+                                <List items="{/maintenanceRequests}" class="maintenanceList">
+                                    <CustomListItem class="maintenanceItem">
+                                        <VBox width="100%">
+                                            <HBox justifyContent="SpaceBetween" alignItems="Start" width="100%">
+                                                <HBox alignItems="Center">
+                                                    <core:Icon src="{icon}" color="{iconColor}" size="1.2rem"/>
+                                                    <VBox class="maintenanceInfo">
+                                                        <Text text="{title}" class="maintenanceTitle"/>
+                                                        <Text text="{location}" class="maintenanceLocation"/>
+                                                    </VBox>
+                                                </HBox>
+                                                <ObjectStatus text="{priority}" state="{priorityState}" class="priorityBadge"/>
+                                            </HBox>
+                                            <Text text="{reportedBy}" class="maintenanceReporter"/>
+                                        </VBox>
+                                    </CustomListItem>
+                                </List>
+                            </VBox>
+                            
+                            <!-- Check-In/Out Activities -->
+                            <VBox class="contentCard">
+                                <HBox justifyContent="SpaceBetween" alignItems="Center" width="100%" class="cardHeader">
+                                    <Title text="Check-In/Out Activities" level="H3" class="cardTitle"/>
+                                    <Link text="View Details →" class="viewAllLink"/>
+                                </HBox>
+                                
+                                <List items="{/checkActivities}" class="checkActivitiesList">
+                                    <CustomListItem class="checkActivityItem">
+                                        <HBox justifyContent="SpaceBetween" alignItems="Center" width="100%">
+                                            <HBox alignItems="Center">
+                                                <core:Icon src="{icon}" color="{iconColor}" size="1.5rem"/>
+                                                <VBox class="activityInfo">
+                                                    <Text text="{studentName}" class="activityName"/>
+                                                    <Text text="{room}" class="activityRoom"/>
+                                                </VBox>
+                                            </HBox>
+                                            <VBox alignItems="End">
+                                                <Text text="{date}" class="activityDate"/>
+                                                <ObjectStatus text="{status}" state="{statusState}" class="activityStatus"/>
+                                            </VBox>
+                                        </HBox>
+                                    </CustomListItem>
+                                </List>
+                                
+                                <HBox justifyContent="SpaceBetween" class="activitySummary">
+                                    <VBox alignItems="Start" class="summaryBox summaryGreen">
+                                        <Text text="Check-in Today" class="summaryBoxLabel"/>
+                                        <Text text="34" class="summaryBoxValue"/>
+                                    </VBox>
+                                    <VBox alignItems="Start" class="summaryBox summaryOrange">
+                                        <Text text="Check-out Today" class="summaryBoxLabel"/>
+                                        <Text text="32" class="summaryBoxValue"/>
+                                    </VBox>
+                                </HBox>
+                            </VBox>
+                        </VBox>
+                        
+                        <!-- Right Column -->
+                        <VBox class="rightColumn">
+                            <!-- Outstanding Alerts -->
+                            <VBox class="contentCard alertCard">
+                                <HBox justifyContent="SpaceBetween" alignItems="Center" width="100%" class="cardHeader">
+                                    <Title text="Outstanding Alerts" level="H3" class="cardTitle"/>
+                                    <core:Icon src="sap-icon://alert" color="#E74C3C" size="1.2rem"/>
+                                </HBox>
+                                
+                                <VBox class="alertsList">
+                                    <HBox alignItems="Center" class="alertItem alertDanger">
+                                        <core:Icon src="sap-icon://error" color="#FFF" size="2rem" class="alertIcon"/>
+                                        <VBox class="alertContent">
+                                            <Text text="Students with overdue payments (> 30 days)" class="alertText"/>
+                                        </VBox>
+                                    </HBox>
+                                    
+                                    <HBox alignItems="Center" class="alertItem alertWarning">
+                                        <core:Icon src="sap-icon://warning" color="#FFF" size="2rem" class="alertIcon"/>
+                                        <VBox class="alertContent">
+                                            <Text text="Students with pending payments (15-30 days)" class="alertText"/>
+                                        </VBox>
+                                    </HBox>
+                                    
+                                    <HBox alignItems="Center" class="alertItem alertInfo">
+                                        <core:Icon src="sap-icon://information" color="#FFF" size="2rem" class="alertIcon"/>
+                                        <VBox class="alertContent">
+                                            <Text text="Students with current outstanding balance" class="alertText"/>
+                                        </VBox>
+                                    </HBox>
+                                </VBox>
+                            </VBox>
+                            
+                            <!-- Additional Stats Card -->
+                            <VBox class="contentCard statsCard">
+                                <Title text="Today's Summary" level="H3" class="cardTitle"/>
+                                
+                                <VBox class="todayStats">
+                                    <HBox justifyContent="SpaceBetween" alignItems="Center" class="todayStatItem">
+                                        <HBox alignItems="Center">
+                                            <core:Icon src="sap-icon://building" color="#3498DB" size="1.5rem"/>
+                                            <Text text="Total Occupants" class="todayStatLabel"/>
+                                        </HBox>
+                                        <Text text="186" class="todayStatValue"/>
+                                    </HBox>
+                                    
+                                    <HBox justifyContent="SpaceBetween" alignItems="Center" class="todayStatItem">
+                                        <HBox alignItems="Center">
+                                            <core:Icon src="sap-icon://visits" color="#27AE60" size="1.5rem"/>
+                                            <Text text="Check-ins Today" class="todayStatLabel"/>
+                                        </HBox>
+                                        <Text text="34" class="todayStatValue"/>
+                                    </HBox>
+                                    
+                                    <HBox justifyContent="SpaceBetween" alignItems="Center" class="todayStatItem">
+                                        <HBox alignItems="Center">
+                                            <core:Icon src="sap-icon://log" color="#E67E22" size="1.5rem"/>
+                                            <Text text="Check-outs Today" class="todayStatLabel"/>
+                                        </HBox>
+                                        <Text text="32" class="todayStatValue"/>
+                                    </HBox>
+                                </VBox>
+                            </VBox>
+                        </VBox>
+                        
+                    </HBox>
+                    
+                </VBox>
+            </ScrollContainer>
+        </content>
     </Page>
 </mvc:View>

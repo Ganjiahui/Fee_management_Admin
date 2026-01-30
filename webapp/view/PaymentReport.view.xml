@@ -1,0 +1,137 @@
+<mvc:View
+    controllerName="feemanagmentadmin.controller.PaymentReport"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    
+    <Page id="paymentReportPage" title="Hostel Fee Payment Report" showNavButton="true" navButtonPress="onNavBack" class="paymentReportPage">
+        <customHeader>
+            <Toolbar class="pageHeaderToolbar">
+                <Button icon="sap-icon://nav-back" press="onNavBack" type="Transparent"/>
+                <Title text="Hostel Fee Payment Report" level="H1" class="pageTitle"/>
+            </Toolbar>
+        </customHeader>
+        
+        <subHeader>
+            <Toolbar class="pageSubHeaderToolbar">
+                <Text text="Monitor and manage student hostel fee payments" class="pageSubtitle"/>
+            </Toolbar>
+        </subHeader>
+        
+        <content>
+            <ScrollContainer height="100%" width="100%" vertical="true">
+                <VBox class="sapUiMediumMargin">
+                    
+                    <!-- Tab Navigation -->
+                    <HBox class="tabNavigation">
+                        <Button text="Hostel Fee Monitoring" icon="sap-icon://activity-items" type="Emphasized" class="activeTab"/>
+                    </HBox>
+                    
+                    <!-- Statistics Cards -->
+                    <HBox class="statsRowPayment" wrap="Wrap">
+                        <VBox class="statCardPayment">
+                            <Text text="Total Students" class="statLabelPayment"/>
+                            <Text text="100" class="statNumberPayment"/>
+                        </VBox>
+                        
+                        <VBox class="statCardPayment paidCardPayment">
+                            <Text text="Paid Students" class="statLabelPayment"/>
+                            <Text text="60" class="statNumberPayment statNumberGreenPayment"/>
+                        </VBox>
+                        
+                        <VBox class="statCardPayment unpaidCardPayment">
+                            <Text text="Unpaid Students" class="statLabelPayment"/>
+                            <Text text="40" class="statNumberPayment statNumberRedPayment"/>
+                        </VBox>
+                        
+                        <VBox class="statCardPayment outstandingCardPayment">
+                            <Text text="Total Outstanding" class="statLabelPayment"/>
+                            <Text text="RM 31080.00" class="statNumberPayment statNumberBluePayment"/>
+                        </VBox>
+                    </HBox>
+                    
+                    <!-- Filter Buttons and Search -->
+                    <HBox justifyContent="SpaceBetween" alignItems="Center" class="filterSection">
+                        <SegmentedButton selectedKey="all" class="filterSegmented" selectionChange="onFilterChange">
+                            <items>
+                                <SegmentedButtonItem key="all" text="All Students" class="allStudentsBtn"/>
+                                <SegmentedButtonItem key="paid" text="Paid Only" class="paidOnlyBtn"/>
+                                <SegmentedButtonItem key="unpaid" text="Unpaid Only" class="unpaidOnlyBtn"/>
+                            </items>
+                        </SegmentedButton>
+                        
+                        <SearchField placeholder="Search by name, matrix no. or IC..." width="400px" class="searchFieldPayment"/>
+                    </HBox>
+                    
+                    <!-- Payment Table -->
+                    <Table id="paymentTable" class="paymentTable" items="{/students}">
+                        <columns>
+                            <Column width="10%">
+                                <Text text="Matrix No." class="tableHeader"/>
+                            </Column>
+                            <Column width="18%">
+                                <Text text="Student Name" class="tableHeader"/>
+                            </Column>
+                            <Column width="15%">
+                                <Text text="IC Number" class="tableHeader"/>
+                            </Column>
+                            <Column width="22%">
+                                <Text text="Hostel" class="tableHeader"/>
+                            </Column>
+                            <Column width="12%" hAlign="End">
+                                <Text text="Total Fees" class="tableHeader"/>
+                            </Column>
+                            <Column width="12%" hAlign="End">
+                                <Text text="Outstanding" class="tableHeader"/>
+                            </Column>
+                            <Column width="8%" hAlign="Center">
+                                <Text text="Status" class="tableHeader"/>
+                            </Column>
+                            <Column width="8%" hAlign="Center">
+                                <Text text="Action" class="tableHeader"/>
+                            </Column>
+                        </columns>
+                        
+                        <items>
+                            <ColumnListItem class="tableRow">
+                                <cells>
+                                    <Text text="{matrixNo}" class="tableCellText"/>
+                                    <Text text="{studentName}" class="tableCellText tableCellBold"/>
+                                    <Text text="{icNumber}" class="tableCellText"/>
+                                    <Text text="{hostel}" class="tableCellText"/>
+                                    <VBox alignItems="End">
+                                        <Text text="RM" class="tableCellText tableCellSmall"/>
+                                        <Text text="{totalFees}" class="tableCellText"/>
+                                    </VBox>
+                                    <VBox alignItems="End">
+                                        <Text text="RM" class="{= ${outstanding} === '0.00' ? 'tableCellText tableCellSmall tableCellGreen' : 'tableCellText tableCellSmall tableCellRed'}"/>
+                                        <Text text="{outstanding}" class="{= ${outstanding} === '0.00' ? 'tableCellText tableCellGreen' : 'tableCellText tableCellRed'}"/>
+                                    </VBox>
+                                    <ObjectStatus text="{status}" state="{= ${status} === 'PAID' ? 'Success' : 'Error'}" class="statusBadgeTable"/>
+                                    <Button icon="sap-icon://edit" type="Transparent" class="actionButton"/>
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                    
+                    <!-- Payment Reminder Section -->
+                    <VBox class="reminderSection">
+                        <HBox justifyContent="SpaceBetween" alignItems="Center">
+                            <VBox>
+                                <Title text="Payment Reminder" level="H3" class="reminderTitle"/>
+                                <Text text="Send payment reminder to 40 students who haven't paid their hostel fees yet." class="reminderText"/>
+                            </VBox>
+                            <Button text="Send Reminder to All Unpaid" icon="sap-icon://email" type="Emphasized" class="reminderButton" press="onSendReminder"/>
+                        </HBox>
+                    </VBox>
+                    
+                    <!-- Footer -->
+                    <HBox justifyContent="Center" class="pageFooter">
+                        <Text text="Copy right @ 2021 LMS Dashboard" class="footerText"/>
+                    </HBox>
+                    
+                </VBox>
+            </ScrollContainer>
+        </content>
+    </Page>
+</mvc:View>
